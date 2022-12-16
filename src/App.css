@@ -1,5 +1,16 @@
+:root {
+  --twitter-color: rgb(29, 155, 240);
+  --twitter-color-light: rgba(29, 155, 240, 0.2);
+  --twitter-dark-background: rgb(0, 0, 0);
+  --twitter-dark-text: rgb(231, 233, 234);
+  --twitter-dark-hover: rgba(40, 40, 40, 0.25);
+}
+
 * {
   margin: 0;
-  background-color: rgb(0,0,0);
-  color: rgb(231, 233, 234);
+  color: var(--twitter-dark-text);
+}
+
+body {
+  background-color: var(--twitter-dark-background);
 }

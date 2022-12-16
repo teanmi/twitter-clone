@@ -1,0 +1,17 @@
+.sidebar {
+  padding: 2px 24px;
+}
+
+.sidebar__btn {
+  background-color: var(--twitter-color);
+  font-weight: 600;
+  padding: 12px 80px;
+  border-radius: 30px;
+  font-size: 20px;
+  margin-top: 8px;
+  transition: background-color 150ms ease;
+}
+
+.sidebar__btn:hover {
+  background-color: rgb(24, 134, 207);
+}
