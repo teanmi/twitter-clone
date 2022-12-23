@@ -11,10 +11,17 @@
 
 .tweetBox__input {
   display: flex;
-  padding: 20px;
+  padding: 10px;
+  
+}
+
+.input__container {
+  display: flex;
+  align-items: center;
 }
 
 .tweetBox__inputText {
+
   flex: 1;
   margin-left: 20px;
   font-size: 20px;

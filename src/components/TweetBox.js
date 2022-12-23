@@ -21,8 +21,8 @@ const TweetBox = () => {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="" />
-          <div className="containers">
+          <Avatar src="" sx={{ width:50, height: 50 }}/>
+          <div className="input__container">
             <input className="tweetBox__inputText" placeholder="What's happening?" type="text" />
             <div className="uploadImage">
               {shareImage && (
@@ -34,7 +34,7 @@ const TweetBox = () => {
         <div className="buttons">
           <div className="tweetBox__imageButton">
             <label htmlFor="file">
-              <BrokenImageOutlinedIcon />
+              <BrokenImageOutlinedIcon sx={{fill: "var(--twitter-color)"}}  />
             </label>
             <input
               id="file"
