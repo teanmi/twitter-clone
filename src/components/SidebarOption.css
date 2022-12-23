@@ -5,9 +5,8 @@
   width: min-content;
   border-radius: 50px;
   background-color: var(--twitter-dark-background);
-  transition: all 15  00ms ease;
+  transition: all 300ms ease;
   margin: 4px 0;
-
 }
 
 .sidebarOption--logo {
@@ -19,7 +18,7 @@
 }
 
 .sideBarOption--active > .sidebarOption__text {
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .sidebarOption:hover {
@@ -39,4 +38,10 @@
   font-weight: 500;
   font-size: 22px;
   margin-right: 20px;
+}
+
+@media (max-width: 1300px) {
+  .sidebarOption__text {
+    display: none;
+  }
 }

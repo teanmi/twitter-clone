@@ -1,0 +1,30 @@
+.widgets {
+  flex: 0.3;
+}
+
+@media (max-width: 1300px) {
+  .widgets {
+    flex: 0.35;
+  }
+}
+
+@media (max-width: 1025px) {
+  .widgets {
+    flex: 0.2;
+  }
+  .container {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .widgets {
+    flex: 0.1;
+  }
+}
+
+@media (max-width: 800px) {
+  .widgets {
+    flex: 0;
+  }
+}
