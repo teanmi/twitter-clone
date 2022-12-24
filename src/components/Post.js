@@ -32,7 +32,7 @@ export default function Post({
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              <span className="post__headerDisplayName">Joe Swatson</span>
+              <span className="post__headerDisplayName">teanmi</span>
               <span>
                 <VerifiedIcon
                   color="secondary"
@@ -53,12 +53,7 @@ export default function Post({
           </div>
 
           <div className="post__headerDescription">
-            <p>
-              I am the bestI am the bestI am the bestI am the bestI am the bestI
-              am the bestI am the bestI am the bestI am the bestI am the bestI
-              am the bestI am the bestI am the bestI am the bestI am the bestI
-              am the best
-            </p>
+            <p>YAY Cats!!!!</p>
             {/* <img
                 className="post__headerImg"
                 src="https://www.w3schools.com/images/w3schools_green.jpg"

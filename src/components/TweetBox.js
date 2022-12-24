@@ -21,12 +21,20 @@ const TweetBox = () => {
     <div className="tweetBox">
       <form>
         <div className="tweetBox__input">
-          <Avatar src="" sx={{ width:50, height: 50 }}/>
+          <Avatar src="" sx={{ width: 50, height: 50 }} />
           <div className="input__container">
-            <input className="tweetBox__inputText" placeholder="What's happening?" type="text" />
+            <input
+              className="tweetBox__inputText"
+              placeholder="What's happening?"
+              type="text"
+            />
             <div className="uploadImage">
               {shareImage && (
-                <img className="img" src={URL.createObjectURL(shareImage)} alt="" />
+                <img
+                  className="img"
+                  src={URL.createObjectURL(shareImage)}
+                  alt=""
+                />
               )}
             </div>
           </div>
@@ -34,7 +42,7 @@ const TweetBox = () => {
         <div className="buttons">
           <div className="tweetBox__imageButton">
             <label htmlFor="file">
-              <BrokenImageOutlinedIcon sx={{fill: "var(--twitter-color)"}}  />
+              <BrokenImageOutlinedIcon sx={{ fill: "var(--twitter-color)" }} />
             </label>
             <input
               id="file"

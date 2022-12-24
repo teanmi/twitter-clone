@@ -1,0 +1,38 @@
+.trending {
+  padding: 12px 16px;
+  position: relative;
+  background-color: inherit;
+  transition: background-color 200ms ease;
+}
+
+.trending:hover {
+  background-color: var(--twitter-dark-widgetHover);
+  cursor: pointer;
+}
+
+.trending__subtitle {
+  color: var(--twitter-dark-lightText);
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.trending__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.trending__tweetAmount {
+  margin-left: 1px;
+  color: var(--twitter-dark-lightText);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.trending__more {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+
