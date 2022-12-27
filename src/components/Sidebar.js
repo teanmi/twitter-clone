@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -9,24 +9,22 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
-import CreateIcon from '@mui/icons-material/Create';
+import CreateIcon from "@mui/icons-material/Create";
 
 function Sidebar() {
-
-
-const [isDesktop, setIsDesktop] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(false);
   const handleResize = () => {
     if (window.innerWidth > 1300) {
-        setIsDesktop(true)
+      setIsDesktop(true);
     } else {
-        setIsDesktop(false)
+      setIsDesktop(false);
     }
-  }
-  
+  };
+
   // create an event listener
   useEffect(() => {
-    window.addEventListener("resize", handleResize)
-  })
+    window.addEventListener("resize", handleResize);
+  });
 
   return (
     <div className="sidebar">
@@ -43,8 +41,9 @@ const [isDesktop, setIsDesktop] = useState(false)
       <SidebarOption icon={<PersonOutlineOutlinedIcon />} text="Profile" />
       <SidebarOption icon={<MoreHorizOutlinedIcon />} text="More" />
 
-      <button className="sidebar__btn">{isDesktop ? "Tweet" : <CreateIcon />}</button>
-      
+      <button className="sidebar__btn">
+        {isDesktop ? "Tweet" : <CreateIcon />}
+      </button>
     </div>
   );
 }

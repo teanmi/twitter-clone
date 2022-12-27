@@ -19,7 +19,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-
 }
 
 .tweetBox__inputText {
@@ -30,11 +29,18 @@
   border: none;
   outline: none;
   background-color: var(--twitter-dark-background);
-  width: 95%
+  width: 95%;
 }
 
+.uploadImage {
+  margin-top: 20px;
+}
 
-
+.uploadImage > img {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--twitter-dark-border);
+}
 
 .buttons {
   display: flex;
@@ -42,19 +48,6 @@
 
 .tweetBox__imageButton {
   margin-left: 80px;
-  display: flex;
-  align-items: flex-start;
-  width: 65%;
-
-}
-
-.tweetBox__imageInput{
-  margin-top: 2px;
-  border: none;
-  outline: none;
-  background-color: inherit;
-  font-size: 14px;
-  width: 100%;
 }
 
 .tweetBox__tweetButton {
@@ -76,4 +69,3 @@
 .tweetBox__tweetButton:hover {
   background-color: rgb(24, 134, 207);
 }
-

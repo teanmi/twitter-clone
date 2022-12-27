@@ -2,24 +2,24 @@ import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import Post from "./Post";
 import TweetBox from "./TweetBox";
-import db from "../firebase";
-import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
+import FlipMove from "react-flip-move";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    async function data() {
-      const todoRef = collection(db, "posts");
-      onSnapshot(todoRef, (snapshot) => {
-        const tempPosts = [];
-        snapshot.forEach((doc) => {
-          tempPosts.push(doc.data());
-        });
-        setPosts(tempPosts);
+    const postRef = collection(db, "posts");
+    const q = query(postRef, orderBy("timestamp", "desc"));
+    onSnapshot(q, (snapshot) => {
+      const tempPosts = [];
+      snapshot.forEach((doc) => {
+        tempPosts.push([doc.data(), doc.id]);
       });
-    }
-    data();
+      setPosts(tempPosts);
+      console.log(tempPosts);
+    });
   }, []);
 
   return (
@@ -29,23 +29,24 @@ const Feed = () => {
       </div>
 
       <TweetBox />
-      {console.log(posts[0])}
 
-      {posts.map((post, index) => (
-        <Post
-          key={index}
-          userPicture={post.userPicture}
-          displayName={post.displayName}
-          username={post.username}
-          verified={post.verified}
-          text={post.text}
-          image={post.image}
-          likes={post.likes}
-          comments={post.comments}
-          shares={post.shares}
-          timestamp={post.timestamp}
-        />
-      ))}
+      <FlipMove>
+        {posts.map((post) => (
+          <Post
+            key={post[1]}
+            userPicture={post[0].userPicture}
+            displayName={post[0].displayName}
+            username={post[0].username}
+            verified={post[0].verified}
+            text={post[0].text}
+            image={post[0].image}
+            likes={post[0].likes}
+            comments={post[0].comments}
+            shares={post[0].shares}
+            timestamp={post[0].timestamp}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 };

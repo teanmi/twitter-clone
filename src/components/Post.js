@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef} from "react";
 import "./Post.css";
 import Avatar from "@mui/material/Avatar";
 import VerifiedIcon from "@mui/icons-material/Verified";
@@ -8,7 +8,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
-export default function Post({
+const Post = forwardRef(({
   userPicture,
   displayName,
   username,
@@ -19,9 +19,10 @@ export default function Post({
   likes,
   shares,
   comments,
-}) {
+}, ref) => {
+  console.log(userPicture)
   return (
-    <div className="post">
+    <div className="post" ref={ref}>
       <div className="post__avatar">
         <Avatar
           src={userPicture}
@@ -44,7 +45,7 @@ export default function Post({
               </span>
             </h3>
             <span className="post__headerSeperation">.</span>
-            <h4 className="post__headerTimestamp">{timestamp}</h4>
+          <h4 className="post__headerTimestamp">{Math.ceil((Date.now() - timestamp) / 3600000)}h</h4>
             <div className="post__btn post__BtnHover post__headerMore post__btnHoverCircle">
               <MoreHorizIcon
                 sx={{ fill: "var(--twitter-dark-lightText)" }}
@@ -62,8 +63,6 @@ export default function Post({
                   alt=""
                 />}
             </figure>
-            {console.log(image)}
-            
           </div>
         </div>
         <div className="post__footer">
@@ -98,4 +97,6 @@ export default function Post({
       </div>
     </div>
   );
-}
+})
+
+export default Post;
