@@ -62,6 +62,8 @@ export default function Post({
                   alt=""
                 />}
             </figure>
+            {console.log(image)}
+            
           </div>
         </div>
         <div className="post__footer">

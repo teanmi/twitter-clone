@@ -3,8 +3,7 @@ import "./TweetBox.css";
 import Avatar from "@mui/material/Avatar";
 import BrokenImageOutlinedIcon from "@mui/icons-material/BrokenImageOutlined";
 import { collection, addDoc } from "firebase/firestore";
-import { ref, uploadBytes } from "firebase/storage";
-import { db, storage } from "../firebase";
+import db from "../firebase";
 
 const TweetBox = () => {
   const [text, setText] = useState("");
@@ -38,19 +37,10 @@ const TweetBox = () => {
     setText(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(text);
-  }, [text]);
-
   const handleImageChange = (e) => {
-    const image = e.target.files[0];
+    e.preventDefault()
 
-    if (image === "" || image === undefined) {
-      alert(`not an image, the file is a ${typeof image}`);
-      return;
-    }
-
-    setShareImage(image);
+    setShareImage(e.target.value);
   };
 
   return (
@@ -66,33 +56,20 @@ const TweetBox = () => {
               placeholder="What's happening?"
               type="text"
             />
-            <div className="uploadImage">
-              {shareImage && (
-                <img
-                  className="img"
-                  src={URL.createObjectURL(shareImage)}
-                  alt=""
-                />
-              )}
-            </div>
           </div>
         </div>
         <div className="buttons">
           <div className="tweetBox__imageButton">
-            <label htmlFor="file">
-              <BrokenImageOutlinedIcon
-                className="hover"
-                sx={{ fill: "var(--twitter-color)" }}
-              />
-            </label>
+            <BrokenImageOutlinedIcon
+              className="hover"
+              sx={{ fill: "var(--twitter-color)" }}
+            />
             <input
-              id="file"
               className="tweetBox__imageInput"
-              type="file"
-              accept="image/gif, image/jpeg, image/png"
-              name="image"
-              style={{ display: "none" }}
+              value={shareImage}
+              type={text}
               onChange={(e) => handleImageChange(e)}
+              placeholder="Optional: Enter Img URL"
             />
           </div>
           {text ? (
