@@ -32,7 +32,7 @@
 }
 
 .widgets__widgetContainer {
-  background-color: var(--twitter-widgets-background);
+  background-color: var(--twitter-dark-widgets-background);
   border-radius: 15px;
 }
 

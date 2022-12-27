@@ -51,8 +51,11 @@
   position: relative;
   bottom: -3px;
   margin-left: 2px;
-  margin-right: 4px;
   color: var(--twitter-color) !important;
+}
+
+.post__headerUsername {
+  margin-left: 4px;
 }
 
 .post__headerUsername,
@@ -85,10 +88,10 @@
 }
 
 .post__headerImg {
+  border: 1px solid var(--twitter-dark-border);
   overflow: hidden;
   border-radius: 15px;
-  border: 1px solid var(--twitter-dark-border);
-  width: 100%;
+  margin-bottom: 4px;
 }
 
 .post__footer {

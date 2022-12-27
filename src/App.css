@@ -8,7 +8,7 @@
   --twitter-dark-lightText: rgb(100, 97, 97);
   --twitter-dark-hover: rgba(43, 40, 40, .3);
   --twitter-dark-widgetHover: rgba(107, 103, 103, .15);
-  --twitter-widgets-background: rgb(17, 17, 24);
+  --twitter-dark-widgets-background: rgb(17, 17, 24);
 
 }
 
@@ -18,7 +18,18 @@
   box-sizing: border-box;
 }
 
+.buttonDisabled {
+  opacity: .5;
+  border: none;
+}
 
+img {
+  width: 100%;
+}
+
+button:hover, .hover:hover {
+  cursor: pointer;
+}
 
 body {
   background-color: var(--twitter-dark-background);

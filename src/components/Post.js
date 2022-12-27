@@ -24,6 +24,7 @@ export default function Post({
     <div className="post">
       <div className="post__avatar">
         <Avatar
+          src={userPicture}
           className="post__avatarImg"
           sx={{ width: 50, height: 50, color: "red" }}
         />
@@ -32,18 +33,18 @@ export default function Post({
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              <span className="post__headerDisplayName">teanmi</span>
+              <span className="post__headerDisplayName">{displayName}</span>
               <span>
-                <VerifiedIcon
+                {verified && <VerifiedIcon
                   color="secondary"
                   sx={{ width: 18, height: 18, fill: "var(--twitter-color)" }}
                   className="post__badge"
-                />
-                <span className="post__headerUsername">@teanmi</span>
+                />}
+                <span className="post__headerUsername">@{username}</span>
               </span>
             </h3>
             <span className="post__headerSeperation">.</span>
-            <h4 className="post__headerTimestamp">12h</h4>
+            <h4 className="post__headerTimestamp">{timestamp}</h4>
             <div className="post__btn post__BtnHover post__headerMore post__btnHoverCircle">
               <MoreHorizIcon
                 sx={{ fill: "var(--twitter-dark-lightText)" }}
@@ -53,12 +54,14 @@ export default function Post({
           </div>
 
           <div className="post__headerDescription">
-            <p>YAY Cats!!!!</p>
-            {/* <img
-                className="post__headerImg"
-                src="https://www.w3schools.com/images/w3schools_green.jpg"
-                alt=""
-              /> */}
+            <p>{text}</p>
+            <figure className="post__headerImgWrapper">
+              {image && <img
+                  className="post__headerImg"
+                  src={image}
+                  alt=""
+                />}
+            </figure>
           </div>
         </div>
         <div className="post__footer">
@@ -67,21 +70,21 @@ export default function Post({
               sx={{ fill: "var(--twitter-dark-lightText)" }}
               fontSize="small"
             />
-            <div className="footer__shareCount">2000</div>
+            <div className="footer__shareCount">{comments}</div>
           </div>
           <div className="post__Btn post__BtnHover post__footerShares">
             <RepeatRoundedIcon
               sx={{ fill: "var(--twitter-dark-lightText)" }}
               fontSize="small"
             />
-            <div className="footer__shareCount">1000</div>
+            <div className="footer__shareCount">{shares}</div>
           </div>
           <div className="post__Btn post__BtnHover post__footerLikes">
             <FavoriteBorderOutlinedIcon
               sx={{ fill: "var(--twitter-dark-lightText)" }}
               fontSize="small"
             />
-            <div className="footer__shareCount">9999</div>
+            <div className="footer__shareCount">{likes}</div>
           </div>
           <div className="post__Btn post__BtnHover post__footerExport post__BtnHoverCircle">
             <FileUploadOutlinedIcon
